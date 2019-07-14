@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>heading</title>
+	<script  src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <script src="jquery.ripples-min.js"></script>
+ <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+ <link rel="stylesheet" href="swiper.min.css">
+	<style type="text/css">
+		*
+      {
+        margin: 0;
+        padding: 0;
+      }
+            header
+              {
+                  position: sticky;
+                  top: 0px;
+                  height: 200px;
+                  margin-bottom: 50px;
+                  background: rgba(0,0,0,.8);
+              }
+      #all
+      {
+        background:#ff3800;
+              border: 1px solid black;
+        width: 1080px;
+              height: 285vh;
+              margin: 20px auto;
+      }
+           .headname
+      {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        transform: translate(-50%,-50%);
+        font-family sans-serif;
+        font-style: italic;
+        text-decoration: none;
+        font-size: 2em;
+        color: #fff;
+              cursor: pointer;
+      }
+              .btn
+      {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        background: #2f3640;
+        height: 35px;
+        border-radius: 30px;
+        padding: 10px;
+
+      }
+      .btn:hover>.search
+      {
+        width: 200px;
+        padding: 0 8px;
+
+      }
+      .btn:hover > .src-btn
+      {
+        background:#fff;
+        justify-content: center;
+        align-items: center;
+      }
+      .src-btn
+      {
+        color: #ff3800;
+        float: right;
+        width: 36px;
+        height: 36px;
+              text-decoration: none;
+        border-radius: 50%;
+        background: #2f3640;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      .search
+      {
+        border:none;
+        background:none;
+        outline: none;
+        float: left;
+        padding: 0;
+        color: #fff;
+        font-size: 18px;
+        transition: 0.8s;
+        line-height: 40px;
+        width: 0;
+      }
+           .logo-main{
+           float: right;
+           list-style: none;
+               margin-top: 3%;
+
+
+   }
+   .logo-main li{
+    display: inline-block;
+   }
+   .logo-main li a{
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 5px 12px;
+   }
+   .logo-main li.active a{
+    border: 1px solid white;
+   }
+   .logo-main li a:hover{
+    border: 0 solid white;
+    font-size: 13px;
+    color: #ccc;
+   }
+              .menu-main{
+    float: left;
+    margin-left: 1%;
+    list-style: none;
+    padding: 80px;
+
+   }
+   .menu-main li{
+    display: inline-block;
+   }
+   .menu-main li a{
+    color: white;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 5px 20px;
+       -webkit-transition: background 2s;
+
+   }
+   .menu-main li.active a{
+    border: 0 solid white;
+      -webkit-transition: background 2s;
+   }
+   .menu-main li a:hover{
+      background:#2f3640;
+    border: 1px solid white;
+    border-top-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+   }
+             .content
+          {
+              position: absolute;
+              top: 75%;
+              left: 5%;
+              transform: translate(-50%,-50%);
+              border-radius: 50%;
+              width: 50px;
+              height: 50px;
+              cursor: pointer;
+              background: #2f3640;
+          }
+          .hum
+          {
+              width: 30px;
+              height: 5px;
+              background: #ff3800;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%,-50%);
+              transition: .5s;
+          }
+
+          .hum:before,
+          .hum:after
+          {
+              content: '';
+              position: absolute;
+              width: 30px;
+              height: 5px;
+              background: #ff3800;
+              box-shadow: 0 2px 5px rgba(0,0,0,.2);
+              transition: .5s;
+
+          }
+          .hum:before
+          {
+              top: -12px;
+          }
+          .hum:after
+          {
+              top: 12px;
+          }
+          .content.active .hum
+          {
+              background: rgba(0,0,0,0);
+              box-shadow: 0 2px 5px rgba(0,0,0,0);
+          }
+          .content.active .hum:before
+          {
+              top: 0;
+              transform: rotate(45deg);
+
+              +}
+          .content.active .hum:after
+          {
+              top: 0;
+              transform: rotate(135deg);
+          }
+          .main-section
+            {
+                float: left;
+                width: 630px;
+                padding: 20px 0;
+                margin: 20px;
+                font-family: sans-serif;
+                font-style: italic;
+                font-size: 20px;
+            }
+            .main-news
+            {
+                float: left;
+                width: 330px;
+                padding: 20px 0px;
+                margin: 20px;
+
+            }
+            .main-section h1
+            {
+                color: #fff;
+                margin-bottom: 20px;
+                font-family: tahoma;
+            }
+.main-section img
+{
+  position: absolute;
+  top:-20%;
+  left: -29%;
+  transform: translate(-50%,-50%);
+  width: 200px;
+  height: 250px;
+}
+.main-section table{
+  align-self: center;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.main-section th{
+    text-align: center;
+    color: white;
+}
+.main-section td{
+  text-align: center;
+  
+}
+.swiper-container {
+      background-color: transparent;
+      width: 100%;
+      height: 250px;            
+      padding-top: 50px;
+      padding-bottom: 50px;
+      margin-bottom: 50px;
+    }
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 200px;
+      height: 200px;
+
+    }
+            .swiper-slide a
+            {
+      text-align: center;
+      justify-content: center;
+      text-decoration: none;
+      font-size: 22px;
+      color: #fff;
+            }
+            .hl
+            {
+            margin-bottom: 10px;    
+            text-align: center;
+            justify-content:center;
+            background-attachment: fixed;
+            font-size: 32px;
+            color: #fff;
+                
+                
+            }
+           .slide-img
+            {
+                height: 200px;
+                width: 200px;
+                
+            }
+            .box01
+            {
+      position: relative;
+      float: left;
+      margin: 20px;
+      padding: 20px 0;
+      width: 350px;
+      height: 400px;
+      background: #000;
+      margin-bottom: 50px;
+    }
+            .cont
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: grid;
+      align-items: center;
+      color: #fff;
+      padding: 20px;
+      font-family: tahoma;
+      text-align: center;
+    }
+    .cont a
+    {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 20px;
+      border: 1px solid #fff;
+      text-decoration:none;
+      color: #fff;
+      transition: 0.5s; 
+    }
+    .cont a:hover
+    {
+      color: #000;
+      background: #fff;
+    }
+    .box01 img
+    {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: center;
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            transition: 2s;
+    }
+    .box01:hover img
+    {
+      -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+    }
+    footer
+    {
+      float: bottom;
+      width: 100%;
+      height: 300px;
+      background: rgba(0,0,0,.8);
+    }
+    .f-left
+    {
+                float: left;
+                width: 320px;
+                padding: 20px 0;
+                margin: 15px;
+                color: #fff;
+        }
+        .f-left .fontawesome
+        {
+          margin-left: 20px;
+          font-size: 1.2em;
+        }
+        .f-middel
+    {
+                float: left;
+                width: 320px;
+                padding: 20px 0;
+                margin: 15px;
+                color: #fff;
+        }
+        .f-middel ul
+        {
+            display:ruby;
+            text-align: center;
+            line-height: 30px;
+        }
+        .f-middel ul li
+        {
+          list-style: none;
+        }
+        .f-middel ul li a
+        {
+            color: #fff;
+            font-style: italic;
+            font-size: 1.1em;
+          text-decoration: none;
+
+        }
+        .f-right
+    {
+                float: left;
+                width: 320px;
+                padding: 20px 0;
+                margin: 15px;
+                color: #fff;
+        }
+        .f-right div
+        {
+          margin-left: 30px;
+        }
+        .f-right div .email
+        {
+           width: 250px;
+           height: 30px;
+           background: #ccc;
+        }
+        .f-right div textarea
+        {
+          background: #ccc;
+        }
+        h3
+        {
+          font-family: tahoma;
+          text-align: center;
+          font-size: 2em;
+          text-transform: uppercase;
+        }
+	</style>
+	<script type="text/javascript">
+      $(document).ready(function(){
+        $("#all").ripples({
+          dropRadius: 12,
+          perturbance: 0.05,
+        });
+      });
+    </script>
+      <script>
+      $(document).ready(function(){
+          $(".content").click(function(){
+
+              $(".content").toggleClass('active')
+             $(".menu-main").slideToggle({
+                 float:screenLeft,
+             })
+          });
+      });
+      </script>
+
+   
+  
+</head>
+<body>
+ <div id="all">
+      <header>
+                 <h1><a class="headname" href="home.html">Phone Finder</a></h1>
+                 <div class="btn">
+                    <input class="search"  type="text" name="search" placeholder="What You Want">
+                     <a class="src-btn" href="#"><i class="fas fa-search fa 2x"></i></a>
+                 </div>
+ <div class="logo">
+ <ul class="logo-main">
+
+   <li><a href="#" class="con" title="Facebook"><i class="fab fa-facebook-f fa-2x"></i></a></li>
+   <li><a href="#" class="con" title="Instagram"><i class="fab fa-instagram fa-2x"></i></a></li>
+   <li><a href="#" class="con" title="Twitter"><i class="fab fa-twitter fa-2x"></i></a></li>
+   <li><a href="#" class="con" title="Blogger"><i class="fab fa-blogger-b fa-2x"></i></a></li>
+   <li><a href="#" class="con" title="Youtube" ><i class="fab fa-youtube fa-2x"></a></i></li>
+   <li><a href="H:\site\registration.html" class="con" title="Registation"><i class="fas fa-user-plus fa-2x"></i></a></li>
+   <li><a href="H:\site\loginfrom.html" class="con" title="Login"><i class="fas fa-sign-in-alt fa-2x"></i></a></li>
+
+ </ul>
+ </div>
+
+             <nav class="menu" >
+         <div class="content">
+     <div class="hum"></div>
+                 </div>
+   <ul class="menu-main" hidden>
+     <li class="active"><a href="#">HOME</a></li>
+     <li><a href="#">NEWS</a></li>
+     <li><a href="#">TRANDING</a></li>
+     <li><a href="#">SORTING</a></li>
+     <li><a href="H:\site\registration.html">REGISTRATION</a></li>
+     <li><a href="H:\site\loginfrom.html">LOGIN</a></li>
+   </ul>
+         </nav>
+          </header>
+         
+       <div class="main-section">
+          <h1>Google Pixel 2XL</h1>
+<table border="1">
+  
+<tr >
+        <th>Device Name</th>
+        <th>Google Pixel 2XL</th>
+</tr>
+<tr>
+           <th>price</th>
+<td>42,700Rs(on time of relesed)</td>
+</tr>
+<tr>
+         <th rowspan="2">Availability</th>
+<td>Announced - 2017, October</td>
+</tr>
+<tr>
+  <td>Status - Available. Released 2017, October</td>
+</tr>
+<tr>
+             <th>operating system</th>
+<td>Android 8.0, upgradable to Android 9.0 (Pie)</td>
+</tr>
+<tr>
+               <th>processor</th>
+<td>  Qualcomm MSM8998 Snapdragon 835 </td>
+</tr>
+<tr>
+             <th>CPU</th>
+<td>Octa-core (4x2.35 GHz Kryo & 4x1.9 GHz Kryo)</td>
+</tr>
+<tr>
+           <th rowspan="2">camera</th>
+   <td>rare camera = 12.2 MP, f/1.8</td>
+
+</tr>
+<tr>
+      <td>front camera = 8 MP, f/2.4</td>
+</tr>
+<tr>
+          <th>network type</th>
+<td>2G,3G,4G,4G LYT</td>
+</tr>
+<tr>
+        <th>senser</th>
+<td> Fingerprint (rear-mounted), accelerometer, gyro, proximity, compass, barometer</td>
+</tr>
+<tr>
+     <th>battery</th>
+<td>Non-removable Li-Ion 3520 mAh battery </td>
+</tr>
+<tr>
+     <th>color</th>
+<td>Just Black, Black & White</td>
+</tr>
+<th>SIM</th>
+<td>Nano-SIM and eSIM</td>
+</tr>
+<tr>
+<th>Screen size</th>
+<td>6.0 inch</td>
+</tr>
+<tr>
+<th>resoluation</th>
+<td>1440 x 2880 pixels, 18:9 ratio </td>
+</tr>
+<tr>
+<th>protection</th>
+<td>Corning Gorilla Glass 5<br>- Always-on display</td>
+</tr>
+<tr>
+<th rowspan="2">memory</th>
+
+<td>External storage = NO </td>
+</tr>
+<tr>
+<td>internal storage = 64GB or 128GB </td>
+
+</tr>
+     <tr>
+<th>RAM</th>
+<td>4GB</td>
+</tr>
+<tr>
+<th rowspan="4">sound</th>
+<td>Alert types = Vibration; MP3, WAV ringtones</td>
+</tr>
+<tr>
+
+<td>Loudspeaker = Yes,with stereo speakers</td>
+</tr>
+<tr>
+
+<td>3.5mm jack =  No<br>Type-C to 3.5 mm headphone jack adapter</td>
+</tr>
+<tr>
+
+
+<td>  - Active noise cancellation with dedicated mic</td>
+</tr>
+<tr>
+<th>body type</th>
+<td>Front glass, aluminum body, partial glass back</td>
+</tr>
+<tr>
+<th rowspan="2">charger type</th>
+<td> Fast charger</td>
+</tr>
+
+<tr>
+
+<td>Type-C Port</td>
+</tr>
+<tr>
+<th rowspan="5">connecting</th>
+<td>Wi-Fi 802.11 a/b/g/n/ac, dual-band, Wi-Fi Direct, DLNA, hotspot</td>
+</tr>
+<tr>
+
+<td>Bluetooth = 5.0, A2DP, LE, aptX</td>
+</tr>
+<tr>
+
+<td>GPS = Yes, with A-GPS, GLONASS</td>
+</tr>
+<tr>
+
+<td>Radio = No</td>
+</tr>
+<tr>
+
+<td>Infrared port = No</td>
+</tr>
+</table>
+</div> 
+<div class="main-news">
+  <div class="box01">
+  <div class="cont">
+    <div>
+      <h2>Google Pixel 3a</h2>
+    <h4>Price=39,999INR</h4>
+    <h4>camera=12MP</h4>
+    <h4>Processor=snapdrogen 670</h4>
+    <h4>Battery=3000mAh</h4>
+    <a href="https://www.amazon.in/Google-Pixel-XL-18-Display/dp/B077X9B22T/ref=sr_1_1?keywords=pixel+2xl&qid=1563105614&s=gateway&sr=8-1">Buy Now</a>
+    </div>
+  </div>
+  <img src="google-pixel-2XL.jpg" width="350px" height="400px">
+</div>
+
+</div>  
+ <div class="swiper-container">
+                 <p class="hl">IN A STORE NOW</p>
+    <div class="swiper-wrapper">
+        
+        <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\s10.jpg"><br>Samsung Galaxy s10</a></div>
+        <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\samsung-galaxy-fold.jpg"><br>Samsung Galaxy Fold</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img"src="pic\iphone-x.jpg"><br>iphone X</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\s9+.jpg"><br>Samsung Galaxy s9+</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\s10+.jpg"><br>Samsung Galaxy s10+</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\nokia-7+.jpg"><br>Nokia 7+</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\p20-pro.jpg"><br>Huawei p20 Pro</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\oneplus6.jpg"><br>OnePlus 6</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\lg-g7.jpg"><br>LG g7</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\google-pixel3.jpg"><br>Google Pixel 3</a></div>
+          <div class="swiper-slide" ><a href="#"><img class="slide-img" src="pic\google-pixel-3xl.jpg"><br>Google Pixel 3xl</a></div>
+      
+      
+    </div>
+                 
+    <div class="swiper-pagination"></div>
+            </div>
+            
+            <footer>
+              <div class="f-left">
+    <h3>phone finder</h3>
+    <div class="fontawesome">
+    <p>Search your best samrtphone here.<br><br>
+    <i class="fas fa-phone-square-alt fa-2x"></i>9561888954<br><br>
+    <i class="fas fa-envelope-open-text fa-2x"></i>wizardingworld@rediffmail.com</p>
+    </div>
+  </div>
+  <div class="f-middel">
+    <h3>quick links</h3>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">News</a></li>
+        <li><a href="#">Community</a></li>
+        <li><a href="#">Maps</a></li>
+            <li><a href="#">Contact Us</a></li>
+      </ul>
+  </div>
+  <div class="f-right">
+    <h3>contact us</h3>
+    <div>
+    <input class="email" type="alphanumeric" name="email" placeholder="your email address"><br><br><br>
+    <textarea rows="5" cols="41" placeholder="message..."></textarea>
+    </div>
+  </div>
+            </footer>
+ </div>
+  <script src="swiper.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+        autoSlider: true,
+      effect: 'coverflow',
+      grabCurser: true,
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      coverflowEffect: {
+        rotate: 50,
+        stretch: -50,
+        depth: 100,
+        modifier: 1,
+        slideShadows : true,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+      },
+    });
+  </script>
+</body>
+</html>
